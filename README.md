@@ -61,7 +61,7 @@ We have the `MediaFile` class to represent a media file, your task is to:
             if file.format != "mp3":
                 raise ValueError("Invalid file format for Mp3Player!")
 
-             # Implementation...
+            # Implementation...
     ```
 
    The same kind of specialization will be done for `FlacPlayer`, `WavPlayer`,
