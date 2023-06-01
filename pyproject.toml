@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "bootstrap-python-kata"
+name = "media-player-refactoring-python-kata"
 version = "1.0.0"
-description = "Bootstrap for Python katas"
+description = "Media player refactoring kata in Python"
 authors = ["Codding Cuddles"]
 
 [tool.poetry.dependencies]
