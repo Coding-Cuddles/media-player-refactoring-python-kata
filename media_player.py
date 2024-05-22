@@ -12,15 +12,15 @@ class IMediaPlayer(ABC):
 
     @abstractmethod
     def play_audio(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def display_video(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def view_image(self):
-        pass
+        raise NotImplementedError
 
 
 class AudioPlayer(IMediaPlayer):
@@ -65,6 +65,6 @@ class ImagePlayer(IMediaPlayer):
 class MediaListPlayer:
 
     def play_list(self, media_list, players):
-        for i in range(len(media_list)):
+        for media in media_list:
             # Implementation...
             pass
