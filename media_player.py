@@ -9,7 +9,6 @@ class MediaFile:
 
 
 class IMediaPlayer(ABC):
-
     @abstractmethod
     def play_audio(self):
         raise NotImplementedError
@@ -24,7 +23,6 @@ class IMediaPlayer(ABC):
 
 
 class AudioPlayer(IMediaPlayer):
-
     def play_audio(self):
         # Implementation...
         pass
@@ -37,7 +35,6 @@ class AudioPlayer(IMediaPlayer):
 
 
 class VideoPlayer(IMediaPlayer):
-
     def play_audio(self):
         raise NotImplementedError
 
@@ -50,7 +47,6 @@ class VideoPlayer(IMediaPlayer):
 
 
 class ImagePlayer(IMediaPlayer):
-
     def play_audio(self):
         raise NotImplementedError
 
@@ -63,7 +59,6 @@ class ImagePlayer(IMediaPlayer):
 
 
 class MediaListPlayer:
-
     def play_list(self, media_list, players):
         for media in media_list:
             # Implementation...
