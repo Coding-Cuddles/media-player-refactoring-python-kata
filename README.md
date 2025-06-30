@@ -1,7 +1,6 @@
 # Media Player Refactoring Python Kata
 
 [![CI](https://github.com/Coding-Cuddles/media-player-refactoring-python-kata/actions/workflows/main.yml/badge.svg)](https://github.com/Coding-Cuddles/media-player-refactoring-python-kata/actions/workflows/main.yml)
-[![Replit](https://img.shields.io/badge/Try%20with%20Replit-black?logo=replit)](https://replit.com/new/github/Coding-Cuddles/media-player-refactoring-python-kata)
 
 ## Overview
 
@@ -43,44 +42,44 @@ We have the `MediaFile` class to represent a media file, your task is to:
 
 1. Update the player interfaces to take `MediaFile` objects, e.g.:
 
-    ```python
-    class IMediaPlayer(ABC):
+   ```python
+   class IMediaPlayer(ABC):
 
-        @abstractmethod
-        def play_audio(self, file):
-            pass
-    ```
+       @abstractmethod
+       def play_audio(self, file):
+           pass
+   ```
 
 2. Create specialized players that can only handle certain formats (i.e.,
    `Mp3Player`, `FlacPlayer`, `WavPlayer`).
 
-    ```python
-    class Mp3Player(IAudioPlayer):
+   ```python
+   class Mp3Player(IAudioPlayer):
 
-        def play_audio(file):
-            if file.format != "mp3":
-                raise ValueError("Invalid file format for Mp3Player!")
+       def play_audio(file):
+           if file.format != "mp3":
+               raise ValueError("Invalid file format for Mp3Player!")
 
-            # Implementation...
-    ```
+           # Implementation...
+   ```
 
    The same kind of specialization will be done for `FlacPlayer`, `WavPlayer`,
    and respective video and image players.
 
 3. Add corresponding unit tests, e.g.:
 
-    ```python
-    def test_mp3_player_handles_mp3():
-        mp3_player = Mp3Player()
-        mp3_file = MediaFile(format="mp3", filename="")
-        mp3_player.play_audio(mp3_file)
+   ```python
+   def test_mp3_player_handles_mp3():
+       mp3_player = Mp3Player()
+       mp3_file = MediaFile(format="mp3", filename="")
+       mp3_player.play_audio(mp3_file)
 
-    def test_mp3_player_rejects_non_mp3():
-        mp3_player = Mp3Player()
-        flac_file = MediaFile(format="flac", filename="")
-        with pytest.raises(ValueError):
-            mp3_player.play_audio(flac_file)
-    ```
+   def test_mp3_player_rejects_non_mp3():
+       mp3_player = Mp3Player()
+       flac_file = MediaFile(format="flac", filename="")
+       with pytest.raises(ValueError):
+           mp3_player.play_audio(flac_file)
+   ```
 
 ### Exercise 3
 
@@ -101,21 +100,12 @@ Your task is to refactor the code to segregate interfaces based on the
 different file formats and adapt the `MediaListPlayer` to work with the new
 classes and interfaces.
 
+## Prerequisites
+
+- [Python 3.8+](https://www.python.org/)
+- [pytest](https://pytest.org)
+
 ## Usage
-
-You can import this project into [Replit](https://replit.com), and it will
-handle all dependencies automatically.
-
-### Prerequisites
-
-* [Python 3.8+](https://www.python.org/)
-* [pytest](https://pytest.org)
-
-### Run main
-
-```console
-make run
-```
 
 ### Run tests
 
